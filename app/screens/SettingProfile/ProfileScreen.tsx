@@ -17,10 +17,12 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome'
 import MenuProfile from '../../components/MenuProfile'
 import LinearGradient from 'react-native-linear-gradient'
+import { useNavigation } from '@react-navigation/native'
 
-interface Props {}
+interface Props { }
 
-export default ({}: Props) => {
+export default ({ }: Props) => {
+  const navigation = useNavigation()
   return (
     <View style={styles.Container}>
       <LinearGradient
@@ -59,8 +61,8 @@ export default ({}: Props) => {
             </View>
           </View>
         </View>
-        <MenuProfile />
-        <TouchableOpacity activeOpacity={0.7} style={styles.Setting}>
+        <MenuProfile onStories={()=>navigation.navigate('OrderHistory')} onOrder={()=>navigation.navigate('Order')} onStore={()=>navigation.navigate('Point')} onPromotion={()=>navigation.navigate('Reward')} />
+        <TouchableOpacity activeOpacity={0.7} style={styles.Setting} onPress={() => navigation.navigate('UpdateInformation')}>
           <View style={styles.card}>
             <View style={styles.card}>
               <View style={styles.IconContainer}>
@@ -108,7 +110,7 @@ export default ({}: Props) => {
             <Icon style={styles.Icon} name="angle-right" />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => navigation.navigate('Login')} >
           <LinearGradient
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
@@ -173,7 +175,7 @@ const styles = StyleSheet.create({
   },
   Setting: {
     backgroundColor: modules.WHITE,
-    marginTop: modules.BODY_HORIZONTAL_12/2,
+    marginTop: modules.BODY_HORIZONTAL_12 / 2,
     marginHorizontal: modules.BODY_HORIZONTAL_12,
     borderRadius: modules.BODY_HORIZONTAL_12,
     padding: modules.BODY_HORIZONTAL_12,

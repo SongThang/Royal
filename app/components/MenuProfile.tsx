@@ -37,7 +37,7 @@ export default ({ onStories, onOrder, onStore, onPromotion }: Props) => {
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={onStories}
+        onPress={onOrder}
         style={styles.Store}>
         <Image style={styles.Icon} source={require('../Images/list.png')} />
         <View style={styles.info}>
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
   info: {
     alignItems: 'center',
     paddingHorizontal: modules.BODY_HORIZONTAL_12 / 2,
+    flex: 1,
   },
   sub: {
     fontSize: modules.FONT_S - 2,
@@ -91,10 +92,11 @@ const styles = StyleSheet.create({
     fontSize: modules.FONT_H5,
     ...FontGSansBold,
     color: modules.MAIN_COLOR,
+
   },
   point: {
     fontSize: modules.FONT_H5,
     ...FontGSansBold,
-    color:modules.RED
+    color: modules.RED
   },
 })

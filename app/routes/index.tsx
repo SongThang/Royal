@@ -9,7 +9,6 @@ import { enableScreens } from 'react-native-screens'
 import FontAwesome from 'react-native-vector-icons/Entypo'
 import modules from '../modules'
 import { BlurView } from '@react-native-community/blur'
-
 import { View, Text, Platform } from 'react-native'
 import WelcomeContainer from '../screens/Welcome/WelcomeContainer'
 import HomeContainer from '../screens/Home/HomeContainer'
@@ -18,6 +17,13 @@ import ProfileContainer from '../screens/SettingProfile/ProfileContainer'
 import CartContainer from '../screens/Cart/CartContainer'
 import EventContainer from '../screens/Reward/EventContainer'
 import ProductDetailContainer from '../screens/ProductDetail/ProductDetailContainer'
+import LoginContainer from '../screens/Auth/Login/LoginContainer'
+import ConfirmCodeContainer from '../screens/Auth/ConfirmCode/ConfirmCodeContainer'
+import UpdateInformationContainer from '../screens/SettingProfile/UpdateInformation/UpdateInformationContainer'
+import PointContainer from '../screens/SettingProfile/Points/PointContainer'
+import RewardContainer from '../screens/SettingProfile/Reward/RewardContainer'
+import OrderContainer from '../screens/SettingProfile/Order/OrderContainer'
+import OrderHistoryContainer from '../screens/SettingProfile/OrderHistory/OrderHistoryContainer'
 
 enableScreens()
 const Tab = createBottomTabNavigator()
@@ -95,6 +101,13 @@ export default () => {
       <Stack.Navigator screenOptions={{ headerShown: false}}>
         <Stack.Screen name="Home" component={Tab_Stack} />
         <Stack.Screen name="ProductDetail" component={ProductDetailContainer} />
+        <Stack.Screen name="Login" component={LoginContainer} />
+        <Stack.Screen name="ConfirmCode" component={ConfirmCodeContainer} />
+        <Stack.Screen name="UpdateInformation" component={UpdateInformationContainer} />
+        <Stack.Screen name={"Point"} component={PointContainer} />
+        <Stack.Screen name={"Reward"} component={RewardContainer} />
+        <Stack  .Screen name={"Order"} component={OrderContainer} />
+        <Stack  .Screen name={"OrderHistory"} component={OrderHistoryContainer} />
       </Stack.Navigator>
     </NavigationContainer>
   )
